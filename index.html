@@ -1,208 +1,178 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Package Tracking</title>
-  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+  <title>FedEx Express Delivery Company</title>
   <style>
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-      font-family: 'Roboto', sans-serif;
-    }
     body {
-      background: linear-gradient(to bottom right, #3f0d84, #7a3ee2);
-      color: #fff;
-      min-height: 100vh;
+      margin: 0;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background: linear-gradient(to bottom, #f4f4f4, #eaeaea);
       overflow-x: hidden;
     }
 
     header {
-      background: #4b0fc9;
-      padding: 20px;
-      text-align: center;
-      font-size: 1.4em;
-      font-weight: bold;
+      background-color: #4d148c;
+      color: white;
+      padding: 1em;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    header h1 span {
+      color: #ff6600;
     }
 
     .hero {
-      padding: 30px;
+      background: url('https://images.unsplash.com/photo-1506619216599-9d16d0903dfd') no-repeat center center/cover;
+      color: white;
       text-align: center;
+      padding: 4em 1em;
     }
 
-    .hero h1 {
-      font-size: 2.2em;
-      margin-bottom: 10px;
+    .hero h2 {
+      font-size: 2.5em;
     }
 
-    .actions {
+    .container {
+      padding: 2em;
+      max-width: 800px;
+      margin: auto;
+    }
+
+    .options {
       display: flex;
-      justify-content: center;
-      gap: 15px;
-      margin: 20px auto;
+      justify-content: space-around;
+      margin-bottom: 2em;
     }
 
-    .action-button {
-      background: #fff;
-      color: #333;
-      padding: 15px 25px;
+    .option {
+      text-align: center;
+      padding: 1em;
       border-radius: 8px;
-      font-weight: bold;
-      cursor: pointer;
-      transition: 0.3s;
+      background: white;
+      box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+      width: 30%;
     }
 
-    .action-button:hover {
-      background: #ff6f00;
-      color: #fff;
+    .option.track {
+      background-color: #4d148c;
+      color: white;
     }
 
-    .track-form {
-      text-align: center;
-      margin-top: 30px;
+    .track-box {
+      display: flex;
+      gap: 1em;
+      justify-content: center;
+      margin-bottom: 2em;
     }
 
-    .track-form input {
-      padding: 12px;
-      width: 250px;
-      border-radius: 5px 0 0 5px;
-      border: none;
+    .track-box input {
+      padding: 0.5em;
       font-size: 1em;
+      width: 60%;
+      border: 1px solid #ccc;
+      border-radius: 5px;
     }
 
-    .track-form button {
-      padding: 12px 20px;
-      border: none;
-      background: orange;
-      color: #fff;
+    .track-box button {
+      background: #ff6600;
+      color: white;
+      padding: 0.5em 1em;
       font-size: 1em;
-      border-radius: 0 5px 5px 0;
+      border: none;
+      border-radius: 5px;
       cursor: pointer;
-    }
-
-    .package-templates {
-      margin: 30px auto;
-      text-align: center;
-    }
-
-    .package-templates h2 {
-      margin-bottom: 10px;
-    }
-
-    .templates-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
-      gap: 20px;
-      padding: 0 20px;
-    }
-
-    .template-box {
-      background: #fff;
-      color: #333;
-      padding: 20px;
-      border-radius: 12px;
-      box-shadow: 0 4px 12px rgba(0,0,0,0.2);
-      font-size: 0.95em;
     }
 
     table {
-      width: 90%;
-      margin: 40px auto;
+      width: 100%;
       border-collapse: collapse;
-      background: #fff;
-      color: #000;
-      border-radius: 12px;
-      overflow: hidden;
+      margin-top: 2em;
+      display: none;
     }
 
     th, td {
-      padding: 15px;
+      border: 1px solid #ccc;
+      padding: 1em;
       text-align: left;
-      border-bottom: 1px solid #ddd;
     }
 
     th {
-      background: #efefef;
+      background-color: #4d148c;
+      color: white;
     }
 
-    .hidden {
-      display: none;
+    .footer {
+      text-align: center;
+      padding: 2em;
+      background-color: #4d148c;
+      color: white;
+      margin-top: 4em;
     }
   </style>
 </head>
 <body>
-  <header>Connected to Tomorrow</header>
-  <div class="hero">
-    <h1>Manage Your Shipments</h1>
-    <div class="actions">
-      <div class="action-button">Fares and Transit Times</div>
-      <div class="action-button">Track</div>
-      <div class="action-button">Send</div>
+  <header>
+    <h1>Fed<span>Ex</span></h1>
+    <div style="font-size: 1.5em;">👤</div>
+  </header>
+
+  <section class="hero">
+    <h2>Connected to tomorrow.</h2>
+  </section>
+
+  <section class="container">
+    <div class="options">
+      <div class="option">FARES AND TRANSIT TIMES</div>
+      <div class="option track">TRACK</div>
+      <div class="option">SEND</div>
     </div>
-    <div class="track-form">
-      <input type="text" id="trackingInput" placeholder="TRACKING ID" />
-      <button onclick="trackPackage()">TRACK</button>
+
+    <div class="track-box">
+      <input id="trackingId" type="text" placeholder="TRACKING ID" />
+      <button onclick="trackPackage()">TRACK →</button>
     </div>
-  </div>
 
-  <div class="package-templates">
-    <h2>Popular Package Templates</h2>
-    <div class="templates-grid">
-      <div class="template-box">Small Box - 1kg</div>
-      <div class="template-box">Medium Box - 5kg</div>
-      <div class="template-box">Large Box - 10kg</div>
-      <div class="template-box">Express Envelope</div>
-    </div>
-  </div>
-
-  <div id="resultTable" class="hidden">
-    <table>
-      <tr><th colspan="2">Sender Information</th></tr>
-      <tr><td>Name</td><td>Dr Jennifer Helena</td></tr>
-      <tr><td>Country</td><td>Afghanistan</td></tr>
-      <tr><td>Email</td><td>jenniferjennyhelena@gmail.com</td></tr>
-      <tr><td>Phone</td><td>00746525472</td></tr>
-
-      <tr><th colspan="2">Receiver Information</th></tr>
-      <tr><td>Name</td><td>ROSA ANGELICA MENDOZA</td></tr>
-      <tr><td>Country</td><td>Colombia</td></tr>
-      <tr><td>Email</td><td>santi1995@hotmail.com</td></tr>
-      <tr><td>Direction</td><td>SANTIAGO MARINO MUNEZ COLOMBIA</td></tr>
-      <tr><td>Phone</td><td>+573507777551</td></tr>
-
-      <tr><th colspan="2">Shipment Info</th></tr>
-      <tr><td>Date of Arrival</td><td>14th July 2025</td></tr>
+    <table id="resultsTable">
+      <thead>
+        <tr><th colspan="2">SENDER'S INFORMATION</th></tr>
+      </thead>
+      <tbody>
+        <tr><td>Name</td><td>Dr Jennifer</td></tr>
+        <tr><td>Country</td><td>Afghanistan</td></tr>
+        <tr><td>Email</td><td>jenniferjennyhelena@gmail.com</td></tr>
+        <tr><td>Phone</td><td>00746525472</td></tr>
+        <tr><th colspan="2">RECEIVER'S INFORMATION</th></tr>
+        <tr><td>Name</td><td>Rogelio Alexander Choto Choto</td></tr>
+        <tr><td>Country</td><td>El Salvador</td></tr>
+        <tr><td>Email</td><td>Rogeliochoto@gmail.com</td></tr>
+        <tr><td>Direction</td><td>Colonia rio vajo san jose talnique la lidertad</td></tr>
+        <tr><td>Phone</td><td>++5037082 5711</td></tr>
+        <tr><th colspan="2">PACKAGE INFORMATION</th></tr>
+        <tr><td>Date of Arrival</td><td>17th of July 2025</td></tr>
+      </tbody>
     </table>
-  </div>
+  </section>
+
+  <footer class="footer">
+    <p>&copy; 2025 FedEx | All right reserved </p>
+  </footer>
 
   <script>
     function trackPackage() {
-      const input = document.getElementById('trackingInput').value.trim();
-      const resultTable = document.getElementById('resultTable');
-      if (input === 'FEDEX-35077G') {
-        resultTable.classList.remove('hidden');
-        window.scrollTo({ top: document.body.scrollHeight, behavior: 'smooth' });
+      const input = document.getElementById('trackingId').value.trim();
+      const table = document.getElementById('resultsTable');
+
+      if (input === 'FEDEX-5037G') {
+        table.style.display = 'table';
       } else {
-        alert('Invalid tracking ID');
+        table.style.display = 'none';
+        alert('Invalid Tracking ID. Please try again.');
       }
     }
   </script>
-
-  <!--Start of Tawk.to Script-->
-  <script type="text/javascript">
-  var Tawk_API=Tawk_API||{}, Tawk_LoadStart=new Date();
-  (function(){
-  var s1=document.createElement("script"),s0=document.getElementsByTagName("script")[0];
-  s1.async=true;
-  s1.src='https://embed.tawk.to/6873a6dd3090ca19169f5cdc/1j01s7kov';
-  s1.charset='UTF-8';
-  s1.setAttribute('crossorigin','*');
-  s0.parentNode.insertBefore(s1,s0);
-  })();
-  </script>
-  <!--End of Tawk.to Script-->
 </body>
 </html>
